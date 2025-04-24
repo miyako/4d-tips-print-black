@@ -12,9 +12,9 @@ var $fg; $bg; $ag : Text
 OBJECT GET RGB COLORS(*; $object; $fg; $bg; $ag)
 ```
 
-In the example below, the objects on the page on top  have a lighter hue because their stroke colours are set to `automatic`.
+In the example below, the objects on the top page have a lighter hue because their stroke colours are set to `automatic`.
 
-By contrast, the objects on the page below have a darker hue because their stroke colours are set to `black`.
+By contrast, the objects on the bottom page have a darker hue because their stroke colours are set to `black`.
 
 <img src="https://github.com/user-attachments/assets/b7438125-a77b-4c37-84df-78d5a570bef0" width=516 height=auto >
 
