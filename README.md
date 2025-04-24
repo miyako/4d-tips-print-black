@@ -101,8 +101,8 @@ and the form JSON
 	},
 	"css": [
 		"/SOURCES/screen.css"
-	],
-…
+	]
+}
 ```
 
 ```4d
