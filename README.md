@@ -47,7 +47,7 @@ The following CSS does not throw any errors but it has no effect in 4D
 
 As a workaround, you can switch stylesheets by first loading the form in an object and changing the `css` property.
 
-For example, given the 2 css files in `/SOURCES`
+For example, given the 2 css files in `/SOURCES/`
 
 * screen.css
 
