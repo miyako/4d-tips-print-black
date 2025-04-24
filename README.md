@@ -1,5 +1,6 @@
-# 4d-tips-print-black
 How to print true black on Mac
+
+# 4d-tips-print-black
 
 When you assign the colour "automatic" to a system object on Mac, its fill or stroke is  is typically not `#000000`.
 
