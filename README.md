@@ -12,13 +12,13 @@ var $fg; $bg; $ag : Text
 OBJECT GET RGB COLORS(*; $object; $fg; $bg; $ag)
 ```
 
-In the example below, the objects on the page on top are not pure black because their stroke colours are set to `automatic`.
+In the example below, the objects on the page on top  have a lighter hue because their stroke colours are set to `automatic`.
 
 By contrast, the objects on the page below have a darker hue because their stroke colours are set to `black`.
 
 <img src="https://github.com/user-attachments/assets/b7438125-a77b-4c37-84df-78d5a570bef0" width=516 height=auto >
 
-According to the colour picker, what seems like black is actually `#272727`. 
+According to the colour picker, what seems like black is actually `#272727`, or very dark grey. 
 
 <img src="https://github.com/user-attachments/assets/6f579815-5dc3-41e6-81a1-348ed8518e44" width=217 height=auto >
 <img src="https://github.com/user-attachments/assets/96c98077-a30b-42e3-b6a0-c4abf875618c" width=217 height=auto >
