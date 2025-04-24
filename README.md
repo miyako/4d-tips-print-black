@@ -29,3 +29,18 @@ In HTML, it is common practice to use [media queries](https://developer.mozilla.
 
 4D also has CSS [media queries](https://developer.4d.com/docs/FormEditor/stylesheets#media-queries) but it only supports the the media feature `prefers-color-scheme`.
 
+The following CSS does not throw any errors but it has no effect in 4D
+
+```css
+@media print {
+	text.normal  {
+		stroke: red;		
+	}
+	input.normal {
+		stroke: red;
+	}	
+	line.normal  {
+		stroke: red;
+	}
+}
+```
