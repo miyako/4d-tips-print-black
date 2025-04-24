@@ -44,3 +44,79 @@ The following CSS does not throw any errors but it has no effect in 4D
 	}
 }
 ```
+
+As a workaround, you can switch stylesheets by first loading the form in an object and changing the `css` property.
+
+For example, given the 2 css files in `/SOURCES`
+
+* screen.css
+
+```css
+@media (prefers-color-scheme: light){
+	text.normal  {
+		stroke: automatic;		
+	}
+	input.normal {
+		stroke: automatic;
+	}	
+	line.normal  {
+		stroke: automatic;	
+	}
+}
+
+@media (prefers-color-scheme: dark){
+	text.normal  {
+		stroke: automatic;		
+	}
+	input.normal {
+		stroke: automatic;
+	}	
+	line.normal  {
+		stroke: automatic;	
+	}
+}
+```
+
+* print.css
+
+```css
+text.normal  {
+	stroke: black;		
+}
+input.normal {
+	stroke: black;
+}	
+line.normal  {
+	stroke: black;
+}
+```
+
+and the form JSON
+
+```json
+{
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"css": [
+		"/SOURCES/screen.css"
+	],
+…
+```
+
+```4d
+FORM LOAD("black")
+```
+
+will print the screen version, whereas
+
+```4d
+$form:=JSON Parse(File("/SOURCES/Forms/black/form.4DForm").getText(); Is object)
+$form.css:=["/SOURCES/print.css"] 
+FORM LOAD($form)
+```
+
+will print the print version.
+
+
