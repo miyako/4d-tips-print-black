@@ -109,7 +109,7 @@ and the form JSON
 FORM LOAD("black")
 ```
 
-will print the screen version, whereas
+will use the default CSS for screen, whereas
 
 ```4d
 $form:=JSON Parse(File("/SOURCES/Forms/black/form.4DForm").getText(); Is object)
@@ -117,6 +117,4 @@ $form.css:=["/SOURCES/print.css"]
 FORM LOAD($form)
 ```
 
-will print the print version.
-
-
+will use the alternative CSS for print.
