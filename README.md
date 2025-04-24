@@ -22,3 +22,10 @@ According to the colour picker, what seems like black is actually `#272727`, or 
 
 <img src="https://github.com/user-attachments/assets/6f579815-5dc3-41e6-81a1-348ed8518e44" width=217 height=auto >
 <img src="https://github.com/user-attachments/assets/96c98077-a30b-42e3-b6a0-c4abf875618c" width=217 height=auto >
+
+## How to use black instead of automatic 
+
+In HTML, it is common practice to use [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries) to apply different styles depending on a device's media. 
+
+4D also has CSS [media queries](https://developer.4d.com/docs/FormEditor/stylesheets#media-queries) but it only supports the the media feature `prefers-color-scheme`.
+
