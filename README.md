@@ -5,7 +5,7 @@
 
 When you assign the colour "automatic" to a system object on Mac, its fill or stroke is typically not `black` or `#000000`.
 
-`OBJECT GET RGB COLORS` may indeed return the hexadecimal value `#000000` in light mode, but on print or PDF, the colour is actually "very dark grey" (`#242424` according to [OPEN COLOR PICKER]), not pure black.
+`OBJECT GET RGB COLORS` may indeed return the hexadecimal value `#000000` in light mode, but on print or PDF, the colour is actually "very dark grey" (`#242424` according to `OPEN COLOR PICKER`), not pure black.
 
 ```4d
 var $fg; $bg; $ag : Text
