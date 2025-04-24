@@ -1,0 +1,23 @@
+@media (prefers-color-scheme: light){
+	text.normal  {
+		stroke: automatic;		
+	}
+	input.normal {
+		stroke: automatic;
+	}	
+	line.normal  {
+		stroke: automatic;	
+	}
+}
+
+@media (prefers-color-scheme: dark){
+	text.normal  {
+		stroke: automatic;		
+	}
+	input.normal {
+		stroke: automatic;
+	}	
+	line.normal  {
+		stroke: automatic;	
+	}
+}
