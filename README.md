@@ -118,3 +118,5 @@ FORM LOAD($form)
 ```
 
 will use the alternative CSS for print.
+
+Of course, if the form is designed exclusively used for print then you may systematically use black instead of automatic.
