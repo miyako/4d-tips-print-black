@@ -5,7 +5,7 @@
 
 Macでシステムオブジェクトに「自動」の色を割り当てると、その塗りつぶしや線の色はいわゆる「まっ黒」つまり`#000000`ではありません。
 
-ライトモードの場合，[`OBJECT GET RGB COLORS`](https://developer.4d.com/docs/commands/object-get-rgb-colors)は、16進値`#000000`を返しますが、印刷やPDFで確認すると、実際には「まっ黒」ではないことに気づきます。
+ライトモードの場合，[`OBJECT GET RGB COLORS`](https://developer.4d.com/docs/commands/object-get-rgb-colors)は「自動」に対して`#000000`を返しますが、印刷やPDFで確認すると、実際には「まっ黒」ではないことに気づきます。
 
 ```4d
 var $fg; $bg; $ag : Text
