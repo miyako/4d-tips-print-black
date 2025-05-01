@@ -3,33 +3,35 @@
 
 # 4d-tips-print-black
 
-When you assign the colour "automatic" to a system object on Mac, its fill or stroke is typically not `black` or `#000000`.
+Macでシステムオブジェクトに「自動」の色を割り当てると、その塗りつぶしや線の色はいわゆる「まっ黒」つまり`#000000`ではありません。
 
-[`OBJECT GET RGB COLORS`](https://developer.4d.com/docs/commands/object-get-rgb-colors) may indeed return the hexadecimal value `#000000` in light mode, but on print or PDF, the colour is actually "very dark grey" (`#242424` according to [`OPEN COLOR PICKER`](https://developer.4d.com/docs/commands/open-color-picker)), not pure black.
+[`OBJECT GET RGB COLORS`](https://developer.4d.com/docs/commands/object-get-rgb-colors)は、ライトモードでは16進値`#000000`を返す場合がありますが、印刷やPDFでは実際にはそうではありません。
 
 ```4d
 var $fg; $bg; $ag : Text
 OBJECT GET RGB COLORS(*; $object; $fg; $bg; $ag)
 ```
 
-In the example below, the objects on the top page have a lighter hue because their stroke colours are set to `automatic`.
+以下の例では、上のページのオブジェクトは線の色が「自動」に設定されているため、色が薄くなっています。
 
-By contrast, the objects on the bottom page have a darker hue because their stroke colours are set to `black`.
+対照的に、下のページのオブジェクトは線の色が「black」に設定されているため、色が濃くなっています。
 
 <img src="https://github.com/user-attachments/assets/b7438125-a77b-4c37-84df-78d5a570bef0" width=516 height=auto >
 
-According to the colour picker, what seems like black is actually `#272727`, or very dark grey. 
+カラーピッカーによると、黒に見える色は実際には`#272727`、つまり「とても暗いグレー」です。
 
 <img src="https://github.com/user-attachments/assets/6f579815-5dc3-41e6-81a1-348ed8518e44" width=217 height=auto >
 <img src="https://github.com/user-attachments/assets/96c98077-a30b-42e3-b6a0-c4abf875618c" width=217 height=auto >
 
-## How to use black instead of automatic 
+## 自動の代わりに黒を使用する方法
 
-In HTML, it is common practice to use [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries) to apply different styles depending on a device's media. 
+HTMLでは、[メディアクエリ]を使用して、デバイスのメディアタイプに応じて異なるスタイルを適用するのが一般的です。
 
-4D also has CSS [media queries](https://developer.4d.com/docs/FormEditor/stylesheets#media-queries) but it only supports the the media feature `prefers-color-scheme`.
+4Dにも[CSSメディアクエリ](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries)がありますが、唯一サポートされているメディアフィーチャーは`prefers-color-scheme`だけです。
 
-The following CSS does not throw any errors but it also has no effect in 4D
+以下のCSSはエラーをスローしませんが、4Dでは効果がありません。
+
+4Dの場合、以下のようにCSSを記述しても、画面と印刷でスタイルが切り替わることはありません。
 
 ```css
 @media print {
@@ -45,9 +47,9 @@ The following CSS does not throw any errors but it also has no effect in 4D
 }
 ```
 
-As a workaround, you can switch stylesheets by first loading the form in an object and changing the `css` property.
+代替策として、フォームをオブジェクトに読み込み，使用する直前に`css`プロパティを変更することで、スタイルシートを切り替えることができます。
 
-For example, given the 2 css files in `/SOURCES/`
+`/SOURCES/`フォルダーに以下のファイルが存在する場合：
 
 * screen.css
 
@@ -91,7 +93,7 @@ line.normal  {
 }
 ```
 
-and the form JSON
+* form.4DForm（抜粋）
 
 ```json
 {
@@ -109,7 +111,7 @@ and the form JSON
 FORM LOAD("black")
 ```
 
-will use the default CSS for screen, whereas
+とすれば，画面用で既定のCSSが使用されます。一方、
 
 ```4d
 $form:=JSON Parse(File("/SOURCES/Forms/black/form.4DForm").getText(); Is object)
@@ -117,6 +119,15 @@ $form.css:=["/SOURCES/print.css"]
 FORM LOAD($form)
 ```
 
-will use the alternative CSS for print.
+とすれば、印刷用で代替のCSSが使用されます。
 
-Of course, if the form is designed exclusively used for print then you may systematically use black instead of automatic.
+もちろん、印刷専用のフォームであれば、CSSを切り替えたりせず，はじめから自動の代わりに黒を全面的に使用したほうが合理的です。
+
+
+
+
+
+
+
+
+
