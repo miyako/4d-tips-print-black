@@ -27,7 +27,7 @@ OBJECT GET RGB COLORS(*; $object; $fg; $bg; $ag)
 
 HTMLでは、[メディアクエリ](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries)を使用して、デバイスのメディアタイプに応じて異なるスタイルを適用するのが一般的です。
 
-4Dにも[CSSメディアクエリ](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries)がありますが、唯一サポートされているメディアフィーチャーは`prefers-color-scheme`だけです。
+4Dにも[CSSメディアクエリ](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries)が用意されていますが、唯一サポートされているメディアフィーチャーは`prefers-color-scheme`だけです。
 
 以下のCSSはエラーをスローしませんが、4Dでは効果がありません。
 
