@@ -25,7 +25,7 @@ OBJECT GET RGB COLORS(*; $object; $fg; $bg; $ag)
 
 ## 自動の代わりに黒を使用する方法
 
-HTMLでは、[メディアクエリ]を使用して、デバイスのメディアタイプに応じて異なるスタイルを適用するのが一般的です。
+HTMLでは、[メディアクエリ](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries)を使用して、デバイスのメディアタイプに応じて異なるスタイルを適用するのが一般的です。
 
 4Dにも[CSSメディアクエリ](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries)がありますが、唯一サポートされているメディアフィーチャーは`prefers-color-scheme`だけです。
 
