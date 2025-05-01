@@ -18,7 +18,7 @@ OBJECT GET RGB COLORS(*; $object; $fg; $bg; $ag)
 
 <img src="https://github.com/user-attachments/assets/b7438125-a77b-4c37-84df-78d5a570bef0" width=516 height=auto >
 
-カラーピッカーによると、黒に見える色は実際には`#272727`、つまり「とても暗いグレー」です。
+プレビューのカラーピッカーでPDFの色を確認すると、黒に見える色は`#272727`、つまり「とても暗いグレー」です。
 
 <img src="https://github.com/user-attachments/assets/6f579815-5dc3-41e6-81a1-348ed8518e44" width=217 height=auto >
 <img src="https://github.com/user-attachments/assets/96c98077-a30b-42e3-b6a0-c4abf875618c" width=217 height=auto >
@@ -122,12 +122,3 @@ FORM LOAD($form)
 とすれば、印刷用で代替のCSSが使用されます。
 
 もちろん、印刷専用のフォームであれば、CSSを切り替えたりせず，はじめから自動の代わりに黒を全面的に使用したほうが合理的です。
-
-
-
-
-
-
-
-
-
